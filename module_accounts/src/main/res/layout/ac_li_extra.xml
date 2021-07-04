@@ -1,0 +1,45 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="item" type="com.skysoul.skydaily.module_accounts.model.beans.ExtraColumn" />
+
+        <variable name="clickEvent"
+            type="com.radiance.androidbase.applibcore.adapter.simpleadapter2.SimpleClickListener4Adapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/btn_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@android:drawable/ic_delete"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/tv_extra_title"
+                style="@style/editact_lefttv"
+                android:text="@{item.key}"
+                tools:text="额外属性:" />
+
+            <TextView
+                android:id="@+id/tv_extra_value"
+                style="@style/editact_rightet"
+                android:text="@{item.value}"
+                tools:text="额外属性value" />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

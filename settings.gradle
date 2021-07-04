@@ -1,0 +1,4 @@
+include ':mainmodule'
+include ':module_accounts'
+include ':libcommon'
+rootProject.name = "SkyDaily"

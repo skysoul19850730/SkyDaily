@@ -1,0 +1,12 @@
+apply from: "../moudle_config.gradle"
+
+android {
+    defaultConfig {
+        if (isRunModule.toBoolean()) {
+            applicationId "com.skysoul.skydaily.accounts"
+        }
+    }
+}
+
+
+

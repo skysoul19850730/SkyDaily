@@ -1,0 +1,40 @@
+ext {
+    dep_kotlin = [
+            "stdlib"    : "org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion["kotlin"]}",
+            "core_ktx"  : "androidx.core:core-ktx:${kotlinVersion["kotlin_core_ktx"]}",
+            "coroutines": "org.jetbrains.kotlinx:kotlinx-coroutines-core:${kotlinVersion["kotlin_coroutines_core"]}",
+    ]
+    dep_net = [
+            "retrofit"                  : "com.squareup.retrofit2:retrofit:${netVersion["retrofit"]}",
+            "converter_gson"            : "com.squareup.retrofit2:converter-gson:${netVersion["converter_gson"]}",
+            "converter_scalars"            : "com.squareup.retrofit2:converter-scalars:${netVersion["converter_scalars"]}",
+            "okhttp_logging_interceptor": "com.squareup.okhttp3:logging-interceptor:${netVersion["okhttp_logging_interceptor"]}"
+    ]
+    dep_mvvm = [
+            "mvvm_extensions": "androidx.lifecycle:lifecycle-extensions:${otherVersion["mvvmLifecycle"]}",
+            "mvvm_viewmodel" : "androidx.lifecycle:lifecycle-viewmodel:${otherVersion["mvvmLifecycle"]}",
+            "mvvm_livedata"  : "androidx.lifecycle:lifecycle-livedata:${otherVersion["mvvmLifecycle"]}",
+            "mvvm_runtime"   : "androidx.lifecycle:lifecycle-runtime:${otherVersion["mvvmLifecycle"]}",
+            "viewmodel-ktx"  : "androidx.lifecycle:lifecycle-viewmodel-ktx:${otherVersion['mvvmLifecycle']}",
+    ]
+
+    dep_nor = [
+            "multidex"        : "com.android.support:multidex:$otherVersion.multidex",
+            "gson"            : "com.google.code.gson:gson:${otherVersion["gson"]}",
+            "arouter-api"     : "com.alibaba:arouter-api:${otherVersion["arouter_api"]}",
+            "arouter-compiler": "com.alibaba:arouter-compiler:${otherVersion["arouter_compiler"]}",
+            "eventbus"        : "org.greenrobot:eventbus:${otherVersion["eventbus"]}"
+    ]
+    dep_apps = [
+            "material"        : "com.google.android.material:material:${appVersion["material"]}",
+            "constraintlayout": "androidx.constraintlayout:constraintlayout:${appVersion["constraintlayout"]}",
+            "appcompat"       : "androidx.appcompat:appcompat:${appVersion["appcompat"]}",
+    ]
+
+
+    kotlins = dep_kotlin.values()
+    mvvms = dep_mvvm.values()
+    apps = dep_apps.values()
+    network = dep_net.values()
+    normals = dep_nor.values()
+}

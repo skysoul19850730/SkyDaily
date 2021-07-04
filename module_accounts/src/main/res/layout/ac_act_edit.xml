@@ -1,0 +1,187 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="viewModel" type="com.skysoul.skydaily.module_accounts.activities.edit.EditViewModel" />
+        <variable name="clickEvent" type="android.view.View.OnClickListener" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.skysoul.skydaily.module_accounts.activities.JSToolbar
+            android:id="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:menu_id="@menu/menu_edit"
+            app:navigationIcon="@android:drawable/ic_menu_close_clear_cancel"
+            app:titleTextColor="#ffffff"
+            app:buttonGravity="bottom|top"
+            app:title="编辑"/>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            android:background="#ffffff"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/editact_lefttv"
+                        android:text="平台:" />
+
+                    <EditText
+                        android:id="@+id/et_platform"
+                        style="@style/editact_rightet"
+                        android:text="@={viewModel.account.platform}"
+                        android:hint="输入平台名称" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/editact_lefttv"
+                        android:text="账号:" />
+
+                    <EditText
+                        android:id="@+id/et_account"
+                        style="@style/editact_rightet"
+                        android:text="@={viewModel.account.accountName}"
+                        android:hint="输入平台账号" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/editact_lefttv"
+                        android:text="密码:" />
+
+                    <EditText
+                        android:id="@+id/et_password"
+                        style="@style/editact_rightet"
+                        android:text="@={viewModel.account.password}"
+                        android:hint="输入平台密码" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/editact_lefttv"
+                        android:text="密码提示:" />
+
+                    <EditText
+                        android:id="@+id/et_tip"
+                        style="@style/editact_rightet"
+                        android:text="@={viewModel.account.tip}"
+                        android:hint="输入平台密码提示" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/editact_lefttv"
+                        android:text="绑定邮箱:" />
+
+                    <EditText
+                        android:id="@+id/et_mail"
+                        style="@style/editact_rightet"
+                        android:text="@={viewModel.account.bindmail}"
+                        android:hint="输入平台账号绑定的邮箱" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/editact_lefttv"
+                        android:text="绑定手机:" />
+
+                    <EditText
+                        android:id="@+id/et_phone"
+                        style="@style/editact_rightet"
+                        android:text="@={viewModel.account.bindphone}"
+                        android:hint="输入平台账号绑定的手机号码" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        style="@style/editact_lefttv"
+                        android:text="所属分类:" />
+
+                    <Spinner
+                        android:id="@+id/spinner_cate"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"></Spinner>
+
+                    <Button
+                        android:id="@+id/btn_addCate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{v->clickEvent.onClick(v)}"
+                        android:text="增加" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/extraLv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <Button
+                    android:id="@+id/btn_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="增加额外属性"
+                    android:onClick="@{v->clickEvent.onClick(v)}"
+                    android:gravity="center" />
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

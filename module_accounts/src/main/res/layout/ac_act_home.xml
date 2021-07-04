@@ -1,0 +1,72 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.skysoul.skydaily.module_accounts.activities.home.HomeViewModel" />
+
+        <variable
+            name="clickEvent"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rlt_bar"
+            android:layout_width="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content">
+
+            <com.skysoul.skydaily.module_accounts.activities.home.HomeToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:visibility="visible"
+                app:buttonGravity="top|bottom"
+                app:navigationIcon="@drawable/md_nav_back"
+                app:title="@string/app_name"
+                app:titleTextColor="#ffffff"/>
+
+            <com.skysoul.skydaily.module_accounts.activities.home.HomeToolbar4Edit
+                android:id="@+id/toolbar4edit"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:visibility="invisible"
+                app:buttonGravity="top|bottom"
+                app:navigationIcon="@android:drawable/ic_menu_close_clear_cancel"
+                app:title="Edit"
+                app:titleTextColor="#ffffff"/>
+        </RelativeLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/rlt_bar">
+
+            <com.yanzhenjie.recyclerview.SwipeRecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fb_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:src="@drawable/ic_add"
+                android:onClick="@{(v)->clickEvent.onClick(v)}"
+                app:fabSize="normal"
+                app:layout_anchor="@id/recyclerView"
+                app:layout_anchorGravity="bottom|right"
+                />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

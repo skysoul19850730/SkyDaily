@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.skysoul.skydaily.module_accounts">
+
+    <application>
+        <activity android:name="com.skysoul.skydaily.module_accounts.activities.login.LoginAct"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.registers.RegisterAct"/>
+        <activity android:name=".activities.registers.RegisterAct2"/>
+        <activity android:name=".activities.home.HomeActivity"/>
+        <activity android:name=".activities.edit.EditActivity"/>
+    </application>
+
+</manifest>
